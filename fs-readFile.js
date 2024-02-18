@@ -1,11 +1,13 @@
 const fs = require('node:fs')
 
 console.log ('Leyendo el primer archivo...')
-const text =  fs.readFileSync('./hmundo.txt', 'utf-8')
+fs.readFile('./hmundo.txt', 'utf-8', (err, text) => {
+    console.log('firstText:', text)
+})
 
-console.log(text)
+console.log('cole tira firmezas mientras tanto...')
 
 console.log ('Leyendo el segundo archivo...')
-const secondText =  fs.readFileSync('./hmundo2.txt', 'utf-8')
-
-console.log(secondText)
+fs.readFile('./hmundo2.txt', 'utf-8', (err, text) => {
+    console.log('secondText', text)
+})
